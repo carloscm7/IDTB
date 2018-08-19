@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="accordion">
+  <h3>Ver opcion 1 - Latino</h3>
+  <div>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.2.0/plyr.css"/>
+    <video class='js-player' poster="thumbnail.jpg" controls playsinline>
+  <!-- Calidad -->
+  <source src="https://lh3.googleusercontent.com/8tzFnz0lOKG-Ouj0LSDZtGqE-N4oE6akmzCX75K6tUZF_-56QUCqVBZOkxa6aizEQDgZv3z2luprBq7j-TYFIXMY2g-vdJbjt7p9tfaF5WwuphOM_Zs4YjXSQA8-Cyval1vL84t8zw=m18" size="360" type="video/mp4">
+  <source src="https://lh3.googleusercontent.com/8tzFnz0lOKG-Ouj0LSDZtGqE-N4oE6akmzCX75K6tUZF_-56QUCqVBZOkxa6aizEQDgZv3z2luprBq7j-TYFIXMY2g-vdJbjt7p9tfaF5WwuphOM_Zs4YjXSQA8-Cyval1vL84t8zw=m22" size="720" type="video/mp4">
+  <source src="https://lh3.googleusercontent.com/8tzFnz0lOKG-Ouj0LSDZtGqE-N4oE6akmzCX75K6tUZF_-56QUCqVBZOkxa6aizEQDgZv3z2luprBq7j-TYFIXMY2g-vdJbjt7p9tfaF5WwuphOM_Zs4YjXSQA8-Cyval1vL84t8zw=m37" size="1080" type="video/mp4">
+</video>
+<script src="https://cdn.plyr.io/3.2.0/plyr.js"></script>
+<script>/*<![CDATA[*/const players = Array.from(document.querySelectorAll('.js-player')).map(player => new Plyr(player));/*]]>*/</script>
+  </div>
+  <h3>Ver opcion 2 - Subtitulado</h3>
+  <div>
+    <p>
+    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+    suscipit faucibus urna.
+    </p>
+  </div>
+  <h3>Poster </h3>
+  <div>
+   <img src="https://image.ibb.co/d8HsNx/1.jpg" width="100%" height="330" />
+  </div>
+</div>
+ </body>
+</html>
