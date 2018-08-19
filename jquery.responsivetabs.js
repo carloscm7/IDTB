@@ -4,12 +4,9 @@
         // measure width
         $tabs.each(function() {
             var width = $(this).outerWidth(true);
-            $(this).find('a').data('width', width);          
+            $(this).data('width', width);          
         });
         $tabs.prependTo($destination);
-		
-		$tabs.find('a').unwrap().removeClass('nav-link').addClass('dropdown-item');
-		
     }
             
     function makeTabsResponsive($element) {
@@ -37,10 +34,10 @@
                     var $dropdown = $element.find('.responsivetabs-more');
                             
                     if(!$dropdown.length) {
-                        var dropdownMarkup = '<li class="dropdown show responsivetabs-more">'
+                        var dropdownMarkup = '<li class="dropdown responsivetabs-more">'
                         + '<a href="#" class="dropdown-toggle" data-toggle="dropdown">...</a>'
-                        + '<div class="dropdown-menu dropdown-menu-right">'
-                        + '</div></li>';
+                        + '<ul class="dropdown-menu dropdown-menu-right">'
+                        + '</ul></li>';
                         $dropdown = $(dropdownMarkup);
                         $element.append($dropdown);
                                 
@@ -83,14 +80,11 @@
             // calculate available horizontal space
             xPxAvailable = parentWidth - tabSetWidth;
 
-            $element.find('.dropdown-menu a').each(function() {
+
+                    
+            $element.find('.dropdown-menu li').each(function() {
                 if($(this).data('width') <= xPxAvailable) {
-					
-					// fix for bootstrap 4
-					$(this).removeClass('dropdown-item').addClass('nav-link');
-					
-					
-                    $(this).insertBefore($element.find('.responsivetabs-more')).wrap('<li class="nav-item"></li>'); 
+                    $(this).insertBefore($element.find('.responsivetabs-more')); 
                     xPxAvailable -= $(this).data('width');
                 } else {
                     return false;
@@ -98,7 +92,7 @@
             });
 
             // if no menu items left, remove "..."
-            if(!$element.find('.dropdown-menu a').length) {
+            if(!$element.find('.dropdown-menu li').length) {
                 $element.find('.responsivetabs-more').remove();
             }
         }
